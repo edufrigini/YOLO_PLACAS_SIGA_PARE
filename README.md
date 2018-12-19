@@ -5,6 +5,7 @@ ANTES DE MAIS NADA EH NECESSARIO TER VARIAS FOTOS DE PLACAS DE SIGA E PARE.
 FIZEMOS MAIS DE 1300 PARA TREINOS E MAIS DE 500 PARA TESTES.
 
 O site da YOLO é https://pjreddie.com/darknet/yolo/https://pjreddie.com/darknet/yolo/
+
 YOLO significa You only look once
 
 ## Index 
