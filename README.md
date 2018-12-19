@@ -12,7 +12,10 @@ YOLO significa You only look once
 - [1 - Install YOLO](#1-install-yolo)
 - [2 - Carregar os pesos](#2-carregar-pesos)
 - [3 - Testar imagens](#3-testar-imagens)
-
+- [4 - Carregar COCO](#4-carregar-coco)
+- [5 - Alterar COCO](#5-alterar-coco)
+- [6 - Retreinar YOLO](#6-retreinar-yolo)
+- [7 - Testar Imagens](#7-testar-imagens)
 
 ## 1-Install yolo
 No passo "Detection Using A Pre-Trained Model"
@@ -43,29 +46,33 @@ bicycle: 99%
 Testei a YOLO v3 usando a web cam, executando esse comando. Funciona bem
 ```./darknet detector demo cfg/coco.data cfg/yolov3.cfg yolov3.weights```
 
+## 4-Carregar COCO
 Toda a parte de VOC pulei
-
 Fui para a Training YOLO on COCO (http://cocodataset.org/#overview)
 COCO é um dataset de imagens marcadas a sigla significa Common Objects in Context
 
 Para treinar a YOLO precisa das imagens e dos labels (marcacoes) , executando esses comandos é possível carregar as imagens e as marcacoes da COCO
-
+```
 cp scripts/get_coco_dataset.sh data
 cd data
 bash get_coco_dataset.sh
+```
+Demora um pouco, depende da velocidade da internet utilizada. Sao mais de 3 Gb de imagens.
 
+## 5-Alterar COCO
 Depois que carregar a base da COCO tem que alterar um arquivo cfg/coco.data 
 Criei um arquivo chamado coco_cps.data (cps é de cone, pare e siga)
 Nao alterei os arquivos da COCO, na verdade criei outros para usar no treino depois
 
 Esse é o que esta no arquivo coco_cps.data:
-
+```
 classes= 3
 train  = /home/edufrigini/Desktop/darknet/data/coco/trainvalno5k_cps.txt
 valid = /home/edufrigini/Desktop/darknet/data/coco/5k_cps.txt
 eval = /home/edufrigini/Desktop/darknet/data/coco/5k_cps.txt
 names = data/coco_cps.names
 backup = backup
+```
 
 Sao 3 classes e para treino aponta para o arquivo trainvalno5k_cps.txt para onde tem a lista de nomes de todas a imagens para treino
 /home/edufrigini/Desktop/darknet/data/coco/images/treino_cps/IMG_1826.JPG
@@ -89,13 +96,16 @@ O arquivo 5k_cps.txt são todas as imagens para teste
 ...
 
 O arquivo coco_cps.names são os nomes das tres classes
+```
 cone
 pare
 siga
+```
 
-Depois copiei o arquivo da yolov3.cfg e como yolov3_cps.cfg e alterei alguns parametros 
+Depois copie o arquivo da yolov3.cfg e como yolov3_cps.cfg e alterei alguns parametros 
 Coloquei o batch para 128 e subdivisoes = 16
 Alterei esses parametros
+```
 [14:50, 12/7/2018] Eduardo.Frigini: [convolutional]
 batch_normalize=1
 filters=32
@@ -112,13 +122,12 @@ jitter=.3
 ignore_thresh = .7
 truth_thresh = 1
 random=1
+```
 
-Depois alterei os filters para de 255 para 24 conforme orientacao do Ranik
+Depois alterei os filters para de 255 para 24.
+Devemos mudar o numero de classes para 3, mas ai tem q mudar o numero de filters para (NC+5)*3)
 
-De acordo com essa conta que ele passou:
-“Vc deve ter mudado o numero de classes para 3
-mas ai vc tem q mudar o numero de filters para (NC+5)*3)”
-
+## 6-Retreinar YOLO
 Depois disso treinei a rede usando a GPU com as imagens de cones, placas de siga e de pare, usando esse comando
 ./darknet detector train cfg/coco_cps.data cfg/yolov3_cps.cfg darknet53.conv.74 -gpus 0
 
@@ -126,6 +135,7 @@ Após 5 dias de treino a rede havia feito 80 mil interacoes e usei para os teste
 
 Usei o mesmo arquivo coco_cps.data
 Fiz uma copia da yolov3_cps.cfg para yolov3_cps_teste.cfg e alterei o inicio do arquivo. Apenas coloquei o batch igual a 1 e as subdivisoes para 1 tambem. Conforme script abaixo.
+```
 [net]
 # Testing
 batch=1
@@ -142,12 +152,14 @@ angle=0
 saturation = 1.5
 exposure = 1.5
 hue=.1
-
-Para testar a rede 
-
+```
+## 7-Testar Imagens
+Para testar a rede com as imagens de placas de SIGA e PARE basta executar o comando
+```
 ./darknet detector test cfg/coco_cps.data cfg/yolov3_cps_teste.cfg yolov3_cps_80000.weights
-
+```
 Resultado do comando
+```
 ...
    99 conv    128  1 x 1 / 1    40 x  40 x 384   ->    40 x  40 x 128  0.157 BFLOPs
   100 conv    256  3 x 3 / 1    40 x  40 x 128   ->    40 x  40 x 256  0.944 BFLOPs
@@ -159,9 +171,11 @@ Resultado do comando
   106 yolo
 Loading weights from yolov3_cps_80000.weights...Done!
 Enter Image Path: 
-
+```
+Passando o caminho da imagem de teste
+```
 /home/edufrigini/Desktop/darknet/data/coco/images/teste_cps/IMG_1681.JPG
-
+```
 Resultado do teste feito na rede treinada com as imagens de SIGA e PARE
 
 
@@ -172,6 +186,7 @@ Resultado do teste feito na rede treinada com as imagens de SIGA e PARE
 
 Para marcar as fotos foi feito o seguinte script em C
 
+```
 /*******************GENERATE_GT***********************
 
  Compile:
@@ -816,3 +831,5 @@ main(int argc, char** argv)
 
 	return EXIT_SUCCESS;
 }
+
+```
