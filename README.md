@@ -35,17 +35,20 @@ wget https://pjreddie.com/media/files/yolov3.weights
 Ficaram no subdiretorio da Darkenet cfg/
 
 ## 3-Testar imagens
-Depois executei a darknet e testei encontrar o cachorro na imagem, usando a yolov3
-```./darknet detect cfg/yolov3.cfg yolov3.weights data/dog.jpg```
-
-O resultado acima é o encontrado pela YOLO
+Depois execute a darknet e teste para encontrar o cachorro na imagem, usando a yolov3
+```
+./darknet detect cfg/yolov3.cfg yolov3.weights data/dog.jpg
+```
+O resultado abaixo é o encontrado pela YOLO
 Resultado da detecção
 dog: 99%
 truck: 93%
 bicycle: 99%
 
-Testei a YOLO v3 usando a web cam, executando esse comando. Funciona bem
-```./darknet detector demo cfg/coco.data cfg/yolov3.cfg yolov3.weights```
+Teste a YOLO v3 usando a web cam, executando esse comando. Funciona bem
+```
+./darknet detector demo cfg/coco.data cfg/yolov3.cfg yolov3.weights
+```
 
 ## 4-Carregar COCO
 Toda a parte de VOC pulei
