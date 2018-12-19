@@ -16,7 +16,7 @@ YOLO significa You only look once
 - [5 - Alterar COCO](#5-alterar-coco)
 - [6 - Retreinar YOLO](#6-retreinar-yolo)
 - [7 - Testar Imagens](#7-testar-imagens)
-- [8 - Anexo1](#8-anexo1)
+- [8 - Anexo](#8-anexo)
 
 ## 1-Instalar YOLO
 No passo "Detection Using A Pre-Trained Model"
@@ -182,7 +182,7 @@ Resultado do teste feito na rede treinada com as imagens de SIGA e PARE
 
 
 
-## 8-Anexo 1
+## 8-Anexo
 
 Para marcar as fotos foi feito o seguinte script em C
 
