@@ -1,10 +1,12 @@
-# YOLO_PLACAS_SIGA_PARE
-
-PASSO A PASSO COMO TREINAR A YOLO PARA DETECTAR PLACAS DE SIGA E PARE
+# PASSO A PASSO COMO TREINAR A YOLO PARA DETECTAR PLACAS DE SIGA E PARE
+# Autores: Eduardo Frigini e Deivison Vitoria
 
 ANTES DE MAIS NADA EH NECESSARIO TIRAR VARIAS FOTOS DE PLACAS DE SIGA E PARE. TIRAMOS MAIS DE 1300 PARA TREINOS E MAIS DE 500 PARA TESTES.
 
 O site da YOLO é https://pjreddie.com/darknet/yolo/https://pjreddie.com/darknet/yolo/
+
+## Index 
+
 
 Detection Using A Pre-Trained Model
 YOLO significa You only look once
