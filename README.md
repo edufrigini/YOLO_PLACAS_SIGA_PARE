@@ -80,6 +80,7 @@ backup = backup
 ```
 
 Sao 3 classes e para treino aponta para o arquivo trainvalno5k_cps.txt para onde tem a lista de nomes de todas a imagens para treino
+```
 /home/edufrigini/Desktop/darknet/data/coco/images/treino_cps/IMG_1826.JPG
 /home/edufrigini/Desktop/darknet/data/coco/images/treino_cps/IMG_1827.JPG
 /home/edufrigini/Desktop/darknet/data/coco/images/treino_cps/IMG_1828.JPG
@@ -90,8 +91,10 @@ Sao 3 classes e para treino aponta para o arquivo trainvalno5k_cps.txt para onde
 /home/edufrigini/Desktop/darknet/data/coco/images/treino_cps/IMG_1833.JPG
 /home/edufrigini/Desktop/darknet/data/coco/images/treino_cps/IMG_1834.JPG
 ...
+```
 
 O arquivo 5k_cps.txt são todas as imagens para teste
+```
 /home/edufrigini/Desktop/darknet/data/coco/images/teste_cps/IMG_0001.JPG
 /home/edufrigini/Desktop/darknet/data/coco/images/teste_cps/IMG_0014.JPG
 /home/edufrigini/Desktop/darknet/data/coco/images/teste_cps/IMG_0169.JPG
@@ -99,6 +102,7 @@ O arquivo 5k_cps.txt são todas as imagens para teste
 /home/edufrigini/Desktop/darknet/data/coco/images/teste_cps/IMG_0308.JPG
 /home/edufrigini/Desktop/darknet/data/coco/images/teste_cps/IMG_0334.JPG
 ...
+```
 
 O arquivo coco_cps.names são os nomes das tres classes
 ```
@@ -134,10 +138,13 @@ Devemos mudar o numero de classes para 3, mas ai tem q mudar o numero de filters
 
 ## 6-Retreinar YOLO
 Depois disso treinei a rede usando a GPU com as imagens de cones, placas de siga e de pare, usando esse comando
+```
 ./darknet detector train cfg/coco_cps.data cfg/yolov3_cps.cfg darknet53.conv.74 -gpus 0
+```
 
 Após 5 dias de treino a rede havia feito 80 mil interacoes e usei para os testes
 
+## 7-Testar Imagens
 Usei o mesmo arquivo coco_cps.data
 Fiz uma copia da yolov3_cps.cfg para yolov3_cps_teste.cfg e alterei o inicio do arquivo. Apenas coloquei o batch igual a 1 e as subdivisoes para 1 tambem. Conforme script abaixo.
 ```
@@ -158,7 +165,6 @@ saturation = 1.5
 exposure = 1.5
 hue=.1
 ```
-## 7-Testar Imagens
 Para testar a rede com as imagens de placas de SIGA e PARE basta executar o comando
 ```
 ./darknet detector test cfg/coco_cps.data cfg/yolov3_cps_teste.cfg yolov3_cps_80000.weights
