@@ -192,7 +192,7 @@ Resultado do teste feito na rede treinada com as imagens de SIGA e PARE
 https://github.com/edufrigini/YOLO_PLACAS_SIGA_PARE/blob/master/SIGA.jpg
 https://github.com/edufrigini/YOLO_PLACAS_SIGA_PARE/blob/master/PARE.jpg
 
-| ![Yolo_v2_training](https://hsto.org/files/d12/1e7/515/d121e7515f6a4eb694913f10de5f2b61.jpg) | ![Yolo_v2_training](https://hsto.org/files/727/c7e/5e9/727c7e5e99bf4d4aa34027bb6a5e4bab.jpg) |
+| ![Yolo_v2_training](https://github.com/edufrigini/YOLO_PLACAS_SIGA_PARE/blob/master/SIGA.jpg) | ![Yolo_v2_training](https://github.com/edufrigini/YOLO_PLACAS_SIGA_PARE/blob/master/PARE.jpg) |
 |---|---|
 
 ## 8-Anexo
