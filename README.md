@@ -41,6 +41,8 @@ Depois execute a darknet e teste para encontrar o cachorro na imagem, usando a y
 ./darknet detect cfg/yolov3.cfg yolov3.weights data/dog.jpg
 ```
 O resultado abaixo é o encontrado pela YOLO
+```
+```
 Resultado da detecção
 ```
 dog: 99%
@@ -54,9 +56,9 @@ Teste a YOLO v3 usando a web cam, executando esse comando. Funciona bem
 ```
 
 ## 4-Carregar COCO
-Toda a parte de VOC pulei
-Fui para a Training YOLO on COCO (http://cocodataset.org/#overview)
-COCO é um dataset de imagens marcadas a sigla significa Common Objects in Context
+Toda a parte de VOC foi pulada.
+Foi para a Training YOLO on COCO (http://cocodataset.org/#overview)
+COCO é um dataset de imagens marcadas a sigla significa Common Objects in Context.
 
 Para treinar a YOLO precisa das imagens e dos labels (marcacoes) , executando esses comandos é possível carregar as imagens e as marcacoes da COCO
 ```
@@ -189,7 +191,7 @@ Passando o caminho da imagem de teste
 ```
 /home/edufrigini/Desktop/darknet/data/coco/images/teste_cps/IMG_1681.JPG
 ```
-Resultado do teste feito na rede treinada com as imagens de SIGA e PARE, o resultado obitido conforme figura a seguir:
+Este é o resultado do teste feito na rede treinada com as imagens de SIGA e PARE:
 
 | ![Yolo_v3_testing](https://github.com/edufrigini/YOLO_PLACAS_SIGA_PARE/blob/master/SIGA.jpg) | ![Yolo_v3_testing](https://github.com/edufrigini/YOLO_PLACAS_SIGA_PARE/blob/master/PARE.jpg) |
 |---|---|
