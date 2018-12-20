@@ -42,9 +42,11 @@ Depois execute a darknet e teste para encontrar o cachorro na imagem, usando a y
 ```
 O resultado abaixo é o encontrado pela YOLO
 Resultado da detecção
+```
 dog: 99%
 truck: 93%
 bicycle: 99%
+```
 
 Teste a YOLO v3 usando a web cam, executando esse comando. Funciona bem
 ```
