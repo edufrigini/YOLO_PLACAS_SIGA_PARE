@@ -40,10 +40,7 @@ Depois execute a darknet e teste para encontrar o cachorro na imagem, usando a y
 ```
 ./darknet detect cfg/yolov3.cfg yolov3.weights data/dog.jpg
 ```
-O resultado abaixo é o encontrado pela YOLO
-```
-```
-Resultado da detecção
+O resultado abaixo é o encontrado pela YOLO:
 ```
 dog: 99%
 truck: 93%
