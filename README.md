@@ -189,8 +189,8 @@ Passando o caminho da imagem de teste
 ```
 Resultado do teste feito na rede treinada com as imagens de SIGA e PARE
 
-
-
+https://github.com/edufrigini/YOLO_PLACAS_SIGA_PARE/blob/master/SIGA.jpg?raw=true
+https://github.com/edufrigini/YOLO_PLACAS_SIGA_PARE/blob/master/PARE.jpg?raw=true
 
 ## 8-Anexo
 
