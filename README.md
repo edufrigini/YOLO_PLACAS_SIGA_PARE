@@ -187,7 +187,7 @@ Passando o caminho da imagem de teste
 ```
 /home/edufrigini/Desktop/darknet/data/coco/images/teste_cps/IMG_1681.JPG
 ```
-Resultado do teste feito na rede treinada com as imagens de SIGA e PARE
+Resultado do teste feito na rede treinada com as imagens de SIGA e PARE, o resultado obitido conforme figura a seguir:
 
 | ![Yolo_v3_testing](https://github.com/edufrigini/YOLO_PLACAS_SIGA_PARE/blob/master/SIGA.jpg) | ![Yolo_v3_testing](https://github.com/edufrigini/YOLO_PLACAS_SIGA_PARE/blob/master/PARE.jpg) |
 |---|---|
